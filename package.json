@@ -1,7 +1,6 @@
 {
   "name": "myportfolio",
   "version": "1.0.0",
-  "description": "",
   "main": "tailwind.config.js",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
@@ -9,8 +8,4 @@
   "devDependencies": {
     "tailwindcss": "^3.4.0"
   }
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
 }
