@@ -6,6 +6,9 @@
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
   },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
   "keywords": [],
   "author": "",
   "license": "ISC",
