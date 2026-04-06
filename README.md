@@ -42,5 +42,26 @@ It highlights:
 - Devicon  
 
 ---
+## 🎯 Purpose of the Project
 
-## 📂 Project Structure
+This portfolio was built to:
+
+Showcase my development skills
+Present my projects professionally
+Create a strong online presence
+Make it easy for recruiters to connect with me
+
+---
+
+## 👨‍💻 Author
+
+Takundah Gorogodo
+CSE Student | Full Stack Developer
+
+GitHub: https://github.com/takundagorogodo
+LinkedIn: https://linkedin.com/in/takundagorgodod
+
+---
+## 📄 License
+
+This project is open-source and available for learning and personal use.
