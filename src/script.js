@@ -86,10 +86,10 @@ bars.forEach((b) => barObserver.observe(b));
 
 /* ── EMAILJS INIT ── */
 (function () {
-  emailjs.init("CcvqUQ8kQ95QB_CiC"); // 🔥 REPLACE THIS
+  emailjs.init("CcvqUQ8kQ95QB_CiC");
 })();
 
-/* ── Contact form (REAL EMAIL SENDING) ── */
+/* ── Contact form (WITH VALIDATION) ── */
 document
   .getElementById('contact-form')
   .addEventListener('submit', function (e) {
@@ -97,26 +97,38 @@ document
 
     const btn = this.querySelector('button[type="submit"]');
 
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    /* ✅ EMAIL VALIDATION */
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (!emailPattern.test(email)) {
+      alert("❌ Please enter a valid email address");
+      return;
+    }
+
+    /* OPTIONAL: block fake domains */
+    const invalidDomains = ["test.com", "example.com", "fake.com"];
+    const domain = email.split("@")[1];
+
+    if (invalidDomains.includes(domain)) {
+      alert("❌ Please use a real email address");
+      return;
+    }
+
     // loading state
     btn.innerHTML =
       '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
     btn.disabled = true;
 
-    const params = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-    };
+    const params = { name, email, subject, message };
 
     emailjs
-      .send(
-        "service_sque5td",   // ✅ your service ID
-        "template_yd3q2wr",  // 🔥 REPLACE THIS
-        params
-      )
+      .send("service_sque5td", "template_yd3q2wr", params)
       .then(() => {
-        // success
         btn.innerHTML =
           '<i class="fa-solid fa-paper-plane"></i> Send Message';
         btn.disabled = false;
