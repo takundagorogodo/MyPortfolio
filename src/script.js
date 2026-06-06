@@ -86,7 +86,7 @@ bars.forEach((b) => barObserver.observe(b));
 
 /* ── EMAILJS INIT ── */
 (function () {
-  emailjs.init("YOUR_PUBLIC_KEY"); // 🔥 REPLACE THIS
+  emailjs.init("CcvqUQ8kQ95QB_CiC"); // 🔥 REPLACE THIS
 })();
 
 /* ── Contact form (REAL EMAIL SENDING) ── */
