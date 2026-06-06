@@ -75,3 +75,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     setTimeout(() => document.getElementById('form-success').classList.add('hidden'), 4000);
   }, 1500);
 });
+
+
+/*sending email*/
+ (function() {
+    emailjs.init("YOUR_PUBLIC_KEY");
+  })();
